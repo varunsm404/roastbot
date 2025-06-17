@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: roastbot
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: python main.py
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: CHANNEL_ID
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
