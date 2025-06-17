@@ -3,7 +3,7 @@ from discord.ext import tasks, commands
 import os
 import json
 from keep_alive import keep_alive
-from datetime import time
+from datetime import time, datetime
 import requests
 
 TOKEN = os.environ['DISCORD_TOKEN']
@@ -20,14 +20,13 @@ USER_IDS = {
 
 
 # ---------- Day Counter Logic ----------
-def get_day_count(name: str) -> int:
-    if not os.path.exists("counter.json"):
-        with open("counter.json", "w") as f:
-            json.dump({"Gaurav": 1, "Jay": 1, "Sushant": 1}, f)
 
-    with open("counter.json", "r") as f:
-        data = json.load(f)
-        return data.get(name, 1)
+def get_day_count():
+    start_date = datetime(2025, 6, 17)  # Day 1
+    today = datetime.now(datetime.timezone.utc)
+    delta = today.date() - start_date.date()
+    return delta.days + 1  
+
 
 def increment_day(name: str):
     with open("counter.json", "r+") as f:
@@ -48,7 +47,7 @@ def get_roast(name: str, day: int) -> str:
     prompt = (
         f"Give a witty one-line financial roast for a friend named {name}. "
         f"Mention it's Day {day} and they are still broke/not a founder/not a millionaire/not a billionaire/rat race participant"
-        f"Make it startup/wealth themed. Keep it funny, witty, and sarcastic and offensive and brutal as hell."
+        f"Make it startup/wealth themed. Keep it sarcastic, offensive and brutal as hell."
     )
 
     data = {
