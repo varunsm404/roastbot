@@ -71,8 +71,8 @@ async def send_roast(name: str):
 
 
 # ---------- Scheduled Tasks ----------
-@tasks.loop(time=[time(hour=4, minute=30)])  # 10 AM IST
 # @tasks.loop(minutes=10)
+@tasks.loop(time=[time(hour=4, minute=30)])  # 10 AM IST
 async def roast_gaurav():
     await send_roast("Sushant")
 
@@ -80,8 +80,8 @@ async def roast_gaurav():
 async def roast_jay():
     await send_roast("Jay")
 
-@tasks.loop(time=[time(hour=15, minute=30)])  # 9 PM IST
 # @tasks.loop(minutes=1)
+@tasks.loop(time=[time(hour=16, minute=00)])  # 9 PM IST
 async def roast_sushant():
     await send_roast("Gaurav")
 
