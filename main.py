@@ -83,16 +83,16 @@ async def send_roast(name: str):
 @tasks.loop(time=[time(hour=4, minute=30)])  # 10 AM IST
 # @tasks.loop(minutes=10)
 async def roast_gaurav():
-    await send_roast("Gaurav")
+    await send_roast("Sushant")
 
 @tasks.loop(time=[time(hour=10, minute=30)])  # 4 PM IST
 async def roast_jay():
     await send_roast("Jay")
 
-# @tasks.loop(time=[time(hour=15, minute=30)])  # 9 PM IST
-@tasks.loop(minutes=1)
+@tasks.loop(time=[time(hour=15, minute=30)])  # 9 PM IST
+# @tasks.loop(minutes=1)
 async def roast_sushant():
-    await send_roast("Sushant")
+    await send_roast("Gaurav")
 
 # ---------- Bot Events ----------
 @bot.event
