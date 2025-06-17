@@ -28,13 +28,6 @@ def get_day_count():
     return delta.days + 1  
 
 
-def increment_day(name: str):
-    with open("counter.json", "r+") as f:
-        data = json.load(f)
-        data[name] = data.get(name, 1) + 1
-        f.seek(0)
-        json.dump(data, f)
-        f.truncate()
 
 # ---------- AI Roast Generator ----------
 def get_roast(name: str, day: int) -> str:
@@ -74,7 +67,6 @@ async def send_roast(name: str):
 
     if isinstance(channel, discord.TextChannel):
         await channel.send(roast_with_mention)
-        increment_day(name)
 
 
 
