@@ -13,9 +13,9 @@ intents = discord.Intents.default()
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 USER_IDS = {
-    "Gaurav": 863724601888735252,   # Replace with Gaurav's actual ID
-    "Jay": 1360077049938579516,      # Replace with Jay's actual ID
-    "Sushant": 559351593539993615   # Replace with Sushant's actual ID
+    "Gaurav": os.environ['Gaurav'],   # Replace with Gaurav's actual ID
+    "Jay": os.environ['Jay'],      # Replace with Jay's actual ID
+    "Sushant": os.environ['Sushant']   # Replace with Sushant's actual ID
 }
 
 
