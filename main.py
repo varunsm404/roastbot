@@ -49,7 +49,7 @@ def get_roast(name: str, day: int) -> str:
         f"- thinks cold emails will save him\n"
         f"- stuck in tutorial hell\n"
         f"- even Judes is making more money\n"
-        f"Make it savage, hilarious, and one-liner format. Return only the roast."
+        f"Make it savage, hilarious, and one-liner format. Return only the roast and keep it under 250 characters."
     )
 
 
