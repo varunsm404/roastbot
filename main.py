@@ -89,8 +89,8 @@ async def roast_gaurav():
 async def roast_jay():
     await send_roast("Jay")
 
-# @tasks.loop(minutes=1)
-@tasks.loop(time=[time(hour=15, minute=30)])  # 9 PM IST
+# @tasks.loop(time=[time(hour=15, minute=30)])  # 9 PM IST
+@tasks.loop(minutes=1)
 async def roast_sushant():
     await send_roast("Sushant")
 
