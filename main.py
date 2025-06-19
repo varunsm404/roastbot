@@ -37,11 +37,11 @@ def get_roast(name: str, day: int) -> str:
     }
 
     prompt = (
-        f"Roast a guy named {name} with a one-liner. "
+        f"Roast a guy named {name} with a unique and creative one-liner each time. "
         f"Mention it's Day {day} and he's still not a founder, still broke, "
         f"still in the rat race, and still not a billionaire. "
         f"Include sarcastic references to startup life, tech culture, and financial delusions. "
-        f"Use brutal wit. Consider situations like:\n"
+        f"Use brutal wit and vary the style and references to avoid repetition. Pick one of the following situations and roast based on that without using the exact wording:\n"
         f"- still using ChatGPT free plan\n"
         f"- has pitch deck but no product\n"
         f"- says he's in stealth mode but actually just unemployed\n"
